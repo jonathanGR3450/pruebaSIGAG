@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OperationController!{% endblock %}
+{% block stylesheets %} {{ parent() }}  {% endblock %}
+
+{% block body %}
+<div class="container p-3 my-3 border">
+    <div class="row">
+        <div class="col-12">
+        <h2 class="text-center">Operacion suma</h2>
+            <form name="form_sumar" id="form_sumar">
+                <div class="form-group">
+                    <label for="number1">Primer Numero</label>
+                    <input type="number" class="form-control" name="number1" id="number1" placeholder="Ingrese un valor">
+                </div>
+                <div class="form-group">
+                    <label for="number2">Segundo Numero</label>
+                    <input type="number" class="form-control" name="number2" id="number2" placeholder="Ingrese un valor">
+                </div>
+                <div class="form-group">
+                    <label id="showSum" name="showSum">Suma: </label>
+                </div>
+                
+            </form>
+            <button id="sumar" name="sumar" type="btn" class="btn btn-primary">Sumar</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %} 
+    {{ parent() }} 
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script src="{{ asset('js/ajax.js') }}"></script>
+{% endblock %}
